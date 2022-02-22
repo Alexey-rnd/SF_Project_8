@@ -1,9 +1,7 @@
-# Skill Factory Project 8
-# get CI installed and configured to build a docker container with nginx  
+# Skill Factory Project 8 (HW-3)
 
-0. pipeline gets started on a hook from github when we commit to the repo
-1. docker builds a container with nginx and gets html file from outside
-2. nginx gets avail at port 9889
-3. nginx test should receive code 200
-4. ---- need to generate md5 sum of the html file, compare it with the sum got from github
-  
+- Run a container with nginx forwarding port 80 to port 9889 on the host system. When hosting nginx in a container over HTTP, nginx should serve the modified index.html file
+- Checking the response code of the running container when making an HTTP request (the code should be 200)
+- Comparing the md5 sum of the modified file with the md5 sum of the file given to nginx for an HTTP request (the sums must match)
+- Trigger for starting CI: making changes to the generated index.html file. In case of an error (in the two previous paragraphs), an alert should be sent to a convenient communication channel - Telegram/Slack/email
+- After CI execution, the created container is deleted
